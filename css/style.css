@@ -1,0 +1,38 @@
+/* CUSTOM CLASS*/
+.round {
+  border-radius: 15px;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Rubik', sans-serif;
+}
+
+section:first-of-type {
+  background-image: url("../images/pattern-bg.png");
+  height: 35%;
+}
+
+section:first-of-type button {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+section:first-of-type h1 {
+  color: white;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+section:first-of-type h2 {
+  color: #969696;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+section:first-of-type p {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,6 @@
 
 $grey: hsl(0, 0%, 59%);
+$dark:  hsl(0, 0%, 17%);
                         /* CUSTOM CLASS*/
 .round{
  border-radius: 15px;
@@ -15,6 +16,8 @@ body{
 
 
 section:first-of-type{
+    position: relative;
+    z-index: 10;
     background-image: url("../images/pattern-bg.png");
     height:35%;
     
@@ -36,7 +39,17 @@ section:first-of-type{
     }
     
     p{
+        color: $dark;
         font-weight: 500;
         font-size: 1.3rem;
     }
 }
+
+section:last-of-type{
+    height:65%;
+}
+
+#ipInformation>div:last-child{
+    margin-bottom: 0;
+}
+

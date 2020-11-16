@@ -9,6 +9,8 @@ body {
 }
 
 section:first-of-type {
+  position: relative;
+  z-index: 10;
   background-image: url("../images/pattern-bg.png");
   height: 35%;
 }
@@ -32,7 +34,16 @@ section:first-of-type h2 {
 }
 
 section:first-of-type p {
+  color: #2b2b2b;
   font-weight: 500;
   font-size: 1.3rem;
+}
+
+section:last-of-type {
+  height: 65%;
+}
+
+#ipInformation > div:last-child {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */

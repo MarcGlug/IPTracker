@@ -22,8 +22,11 @@ section:first-of-type{
     height:35%;
     
     button{
+        position:relative;
         border-top-right-radius: 15px ;
         border-bottom-right-radius: 15px ;
+
+    
     }
     h1{
         color:white;
@@ -49,7 +52,4 @@ section:last-of-type{
     height:65%;
 }
 
-#ipInformation>div:last-child{
-    margin-bottom: 0;
-}
 

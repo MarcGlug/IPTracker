@@ -16,6 +16,7 @@ section:first-of-type {
 }
 
 section:first-of-type button {
+  position: relative;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
@@ -41,9 +42,5 @@ section:first-of-type p {
 
 section:last-of-type {
   height: 65%;
-}
-
-#ipInformation > div:last-child {
-  margin-bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */

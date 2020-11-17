@@ -18,7 +18,7 @@
       <section>
         <div class="container mx-auto p-6">
           <h1 class="text-center mb-6">IP Address Tracker</h1>
-          <form action="" class="round flex bg-white mb-6">
+          <form class="round flex bg-white mb-6">
             <div class="w-full py-4 px-6">
               <input type="text">
             </div>
@@ -26,8 +26,23 @@
               <img src="images/icon-arrow.svg" alt="submit icon" class="mx-auto">
             </button>
           </form>
-          <div id="ipInformation" class="text-center bg-white round p-6">
-            <ip-information v-for="section in sections" v-bind:key="section.id" v-bind:section="section"></ip-information>
+          <div class="text-center bg-white round p-6">
+            <div class="mb-5">
+              <h2>IP ADDRESS</h2>
+              <p id="ipAddressParagraph"></p>
+            </div>
+            <div class="mb-5">
+              <h2>LOCATION</h2>
+              <p id="locationParagraph"></p>
+            </div>
+            <div class="mb-5">
+              <h2>TIMEZONE</h2>
+              <p id="timezoneParagraph"></p>
+            </div>
+            <div>
+              <h2>ISP</h2>
+              <p id="ispParagraph"></p>
+            </div>
           </div>
         </div>
       </section>
@@ -40,10 +55,8 @@
       Coded by <a href="https://github.com/MarcGlug">MarcGlug</a>.
     </footer>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
   <script src="js/map.js"></script>
-  <script src="js/vue.js"></script>
 </html>

@@ -28,18 +28,18 @@ function initMap(){
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(mymap);
 
-    return mymap;
-    //Custom icon
-   /* var customIcon = L.icon({
-        iconUrl: '../images/icon-location.svg',
-        iconSize:     [40, 50], // size of the icon
-    });*/
-    
+    return mymap; 
 }
 
 function updateMap(map, lat, lng){
     map.flyTo([lat, lng], 15);
-    const marker = L.marker([lat, lng]).addTo(map);
+    //Custom icon
+     var customIcon = L.icon({
+        iconUrl: '../images/icon-location.svg',
+        iconSize: [40, 50], // size of the icon
+        iconAnchor:[20,50],
+    });
+    const marker = L.marker([lat, lng], {icon: customIcon}).addTo(map);
 }
 
 function printData(ipAddress, location, timezone, isp ){
@@ -56,7 +56,7 @@ function dataProcessing(ipData, map){
     var ipIsp = ipData.isp;
 
     if(ipIsp.includes("Private-Use")){ //Check if IP Address is private and gives to location, timezone, lat and lng "Private" value if so 
-        var IpLocation;
+        var ipLocation;
         var ipTimezone;
         var ipLat;
         var ipLng;    

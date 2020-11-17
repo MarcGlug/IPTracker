@@ -12,13 +12,23 @@ section:first-of-type {
   position: relative;
   z-index: 10;
   background-image: url("../images/pattern-bg.png");
+  background-size: cover;
+  background-position: center;
   height: 35%;
+}
+
+section:first-of-type form > div:hover {
+  cursor: pointer;
 }
 
 section:first-of-type button {
   position: relative;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+section:first-of-type button:hover {
+  background-color: #969696;
 }
 
 section:first-of-type h1 {
@@ -40,7 +50,20 @@ section:first-of-type p {
   font-size: 1.3rem;
 }
 
+section:first-of-type #dataBloc {
+  min-height: 145px;
+}
+
 section:last-of-type {
   height: 65%;
+}
+
+@media screen and (min-width: 1023px) {
+  section:first-of-type {
+    height: 30%;
+  }
+  section:last-of-type {
+    height: 70%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

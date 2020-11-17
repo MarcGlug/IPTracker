@@ -20,21 +20,26 @@ async function getIpDatas(url) {
     }
 }
 
-function drawMap(lat, lng){
+function initMap(){
 
-    const mymap = L.map('mapid').setView([lat, lng], 13);
+    const mymap = L.map('mapid').setView([50, 0], 3);
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
     }).addTo(mymap);
-    
+
+    return mymap;
     //Custom icon
    /* var customIcon = L.icon({
         iconUrl: '../images/icon-location.svg',
         iconSize:     [40, 50], // size of the icon
     });*/
     
-    const marker = L.marker([lat, lng]).addTo(mymap);
+}
+
+function updateMap(map, lat, lng){
+    map.flyTo([lat, lng], 15);
+    const marker = L.marker([lat, lng]).addTo(map);
 }
 
 function printData(ipAddress, location, timezone, isp ){
@@ -45,12 +50,12 @@ function printData(ipAddress, location, timezone, isp ){
     ispParagraph.innerHTML = isp;
 }
 
-function dataProcessing(ipData){
+function dataProcessing(ipData, map){
     
     var ipAddress = ipData.ip;
     var ipIsp = ipData.isp;
 
-    if(ipIsp.includes("Private-Use")){
+    if(ipIsp.includes("Private-Use")){ //Check if IP Address is private and gives to location, timezone, lat and lng "Private" value if so 
         var IpLocation;
         var ipTimezone;
         var ipLat;
@@ -67,13 +72,14 @@ function dataProcessing(ipData){
     }
     
     printData(ipAddress, ipLocation, ipTimezone, ipIsp);
+    updateMap(map, lat, lng);
 }
 
 //----------------------------------------------SCRIPT----------------------------------------------
 
 window.onload = function (){
     
-    drawMap(45.77,3.08); //Initiate a place when first loading page
+    const map = initMap(); //Initiate a place when first loading page
 
     form.addEventListener("submit", function(e){
 
@@ -86,7 +92,7 @@ window.onload = function (){
         
         ipData.then(function(value){
             if(value != false){
-                dataProcessing(value);
+                dataProcessing(value, map);
             };
         },
         );
